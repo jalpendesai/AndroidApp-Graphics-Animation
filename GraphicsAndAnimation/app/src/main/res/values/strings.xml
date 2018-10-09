@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">jalpendesai_COMP304_Ass3</string>
+    <string name="dialog_name">Dialog message</string>
+    <string name="dialog_title">Dialog Title</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>
