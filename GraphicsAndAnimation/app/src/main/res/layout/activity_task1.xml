@@ -49,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="true"
             android:text="RED" />
 
         <RadioButton
@@ -77,52 +78,59 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btn_UP"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_alignTop="@+id/line_thickness_spinner"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="82dp"
-        app:srcCompat="@drawable/key_arrow_up" />
+        app:srcCompat="@drawable/key_arrow_up"
+        />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btn_LEFT"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/imageButton2"
+        android:layout_alignEnd="@+id/btn_UP"
         android:layout_alignBottom="@+id/rbtnGroup"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="31dp"
-        app:srcCompat="@drawable/key_arrow_left" />
+        app:srcCompat="@drawable/key_arrow_left"
+        android:onClick="LeftButton"/>
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn_RIGHT"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/imageButton2"
+        android:layout_alignEnd="@+id/btn_UP"
         android:layout_alignBottom="@+id/rbtnGroup"
         android:layout_marginEnd="-34dp"
         android:layout_marginBottom="32dp"
-        app:srcCompat="@drawable/key_arrow_right" />
+        app:srcCompat="@drawable/key_arrow_right"
+        android:onClick="RightButton"
+        />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btn_DOWN"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_below="@+id/imageButton2"
+        android:layout_below="@+id/btn_UP"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="81dp"
-        app:srcCompat="@drawable/key_arrow_down" />
+        app:srcCompat="@drawable/key_arrow_down"
+        android:onClick="DownButton"/>
 
     <Button
         android:id="@+id/btn_Clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageButton5"
+        android:layout_below="@+id/btn_DOWN"
         android:layout_alignStart="@+id/lbl_line_thickness"
-        android:text="Clear" />
+        android:text="Clear"
+        android:onClick="clearCanvas"
+        />
 
     <LinearLayout
         android:orientation="horizontal"
