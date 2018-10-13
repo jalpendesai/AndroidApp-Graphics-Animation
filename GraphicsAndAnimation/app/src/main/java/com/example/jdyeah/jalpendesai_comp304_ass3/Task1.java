@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -33,7 +34,11 @@ public class Task1 extends Activity {
     Canvas canvas;
     //
     Handler mHandler = new Handler();
-
+    //
+    boolean down = false;
+    int up = 0;
+    int right = 0;
+    int left = 0;
     String length_thickness = "20";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,11 +113,39 @@ public class Task1 extends Activity {
         ImageButton btnLeft = findViewById(R.id.btn_LEFT);
         ImageButton btnRight = findViewById(R.id.btn_RIGHT);
 
+//        btnDown.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                switch(motionEvent.getAction()){
+//                    case MotionEvent.ACTION_DOWN:
+//                        endy=endy+5;
+//                        drawLine(canvas);
+//                        return true;
+//                }
+//                return false;
+//            }
+//        });
 
-        btnUp.setOnClickListener(new View.OnClickListener() {
+
+        btnDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                reusableImageView.setFocusable(true);
+                reusableImageView.requestFocus();
+                endy=endy+5;
+                drawLine(canvas);
+                reusableImageView.invalidate();
+            }
+        });
 
+        btnRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reusableImageView.setFocusable(true);
+                reusableImageView.requestFocus();
+                endx=endx+5;
+                drawLine(canvas);
+                reusableImageView.invalidate();
             }
         });
 
@@ -139,7 +172,7 @@ public class Task1 extends Activity {
 
     public void clearCanvas(View v)
     {
-        canvas.drawColor(Color.BLACK);
+        canvas.drawColor(Color.WHITE);
     }
     //
     public void moveRect(Canvas canvas)
@@ -150,7 +183,7 @@ public class Task1 extends Activity {
         reusableImageView.setColorFilter(Color.GREEN);
     }
 
-    public void drawLine(int keyCode, Canvas canvas)
+    public void drawLine(Canvas canvas)
     {
         //textView.setText(String.valueOf(endy));
         //canvas.drawLine(100,100,1000,1000,paint);
@@ -164,60 +197,53 @@ public class Task1 extends Activity {
     //hw.dPad=yes
     //hw.mainKeys=yes
 
-    public void DownButton(){
-
-
+//    public void DownButton(){
 //        endy=endy+5;
-//        drawLine(startx,canvas);
-        //drawLine(keyCode,canvas);
-    }
-    public void UpButton(){
+//        drawLine(canvas);
+//    }
 
-    }
-    public void RightButton(){
 
-    }
-    public void LeftButton(){
 
-    }
 
-    public boolean onKeyDown(int keyCode, KeyEvent event)
-    {
-        switch(keyCode)
-        {
-            case KeyEvent.KEYCODE_S:
-                //reusableImageView.setVisibility(View.VISIBLE);
-                //reusableImageView.setFocusable(true);
-                //reusableImageView.requestFocus();
-                endy=endy+5;
-                drawLine( keyCode,canvas);
-                //moveRect(canvas);
-                //reusableImageView.invalidate();
-
-                return true;
-
-            case KeyEvent.KEYCODE_W:
-                //reusableImageView.setVisibility(View.VISIBLE);
-                reusableImageView.setFocusable(true);
-                reusableImageView.requestFocus();
-                endy=endy-5;
-                drawLine( keyCode,canvas);
-                //moveRect(canvas);
-                reusableImageView.invalidate();
-
-                return true;
-            case KeyEvent.KEYCODE_D:
-                //reusableImageView.setVisibility(View.VISIBLE);
-                reusableImageView.setFocusable(true);
-                reusableImageView.requestFocus();
-                endx=endx+5;
-                drawLine( keyCode,canvas);
-                //moveRect(canvas);
-                reusableImageView.invalidate();
-
-                return true;
-
-        }
-        return false;
-    }
+//    public boolean onKeyDown(int keyCode, KeyEvent event)
+//    {
+//        switch(keyCode)
+//        {
+//
+//            case KeyEvent.KEYCODE_S:
+//            //case down = true:
+//                //reusableImageView.setVisibility(View.VISIBLE);
+//                //reusableImageView.setFocusable(true);
+//                //reusableImageView.requestFocus();
+//                endy=endy+5;
+//                drawLine( keyCode,canvas);
+//                //moveRect(canvas);
+//                //reusableImageView.invalidate();
+//
+//                return true;
+//
+//            case KeyEvent.KEYCODE_W:
+//                //reusableImageView.setVisibility(View.VISIBLE);
+//                reusableImageView.setFocusable(true);
+//                reusableImageView.requestFocus();
+//                endy=endy-5;
+//                drawLine( keyCode,canvas);
+//                //moveRect(canvas);
+//                reusableImageView.invalidate();
+//
+//                return true;
+//            case KeyEvent.KEYCODE_D:
+//                //reusableImageView.setVisibility(View.VISIBLE);
+//                reusableImageView.setFocusable(true);
+//                reusableImageView.requestFocus();
+//                endx=endx+5;
+//                drawLine( keyCode,canvas);
+//                //moveRect(canvas);
+//                reusableImageView.invalidate();
+//
+//                return true;
+//
+//        }
+//        return false;
+//    }
 }
