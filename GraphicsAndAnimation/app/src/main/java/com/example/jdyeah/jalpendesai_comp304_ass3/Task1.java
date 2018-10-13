@@ -149,6 +149,28 @@ public class Task1 extends Activity {
             }
         });
 
+        btnUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reusableImageView.setFocusable(true);
+                reusableImageView.requestFocus();
+                endy=endy-5;
+                drawLine(canvas);
+                reusableImageView.invalidate();
+            }
+        });
+
+        btnLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reusableImageView.setFocusable(true);
+                reusableImageView.requestFocus();
+                endx=endx-5;
+                drawLine(canvas);
+                reusableImageView.invalidate();
+            }
+        });
+
 
 
         //creating a bitmap as content view for the canvas
@@ -197,10 +219,6 @@ public class Task1 extends Activity {
     //hw.dPad=yes
     //hw.mainKeys=yes
 
-//    public void DownButton(){
-//        endy=endy+5;
-//        drawLine(canvas);
-//    }
 
 
 
@@ -216,7 +234,7 @@ public class Task1 extends Activity {
 //                //reusableImageView.setFocusable(true);
 //                //reusableImageView.requestFocus();
 //                endy=endy+5;
-//                drawLine( keyCode,canvas);
+//                drawLine( canvas);
 //                //moveRect(canvas);
 //                //reusableImageView.invalidate();
 //
@@ -227,7 +245,7 @@ public class Task1 extends Activity {
 //                reusableImageView.setFocusable(true);
 //                reusableImageView.requestFocus();
 //                endy=endy-5;
-//                drawLine( keyCode,canvas);
+//                drawLine( canvas);
 //                //moveRect(canvas);
 //                reusableImageView.invalidate();
 //
@@ -237,7 +255,7 @@ public class Task1 extends Activity {
 //                reusableImageView.setFocusable(true);
 //                reusableImageView.requestFocus();
 //                endx=endx+5;
-//                drawLine( keyCode,canvas);
+//                drawLine(canvas);
 //                //moveRect(canvas);
 //                reusableImageView.invalidate();
 //
