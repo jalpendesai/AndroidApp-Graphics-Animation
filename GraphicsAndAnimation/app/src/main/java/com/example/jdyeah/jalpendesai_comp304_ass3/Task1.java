@@ -34,7 +34,7 @@ public class Task1 extends Activity {
     //
     Handler mHandler = new Handler();
 
-    int length_thickness = 20;
+    String length_thickness = "20";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,7 @@ public class Task1 extends Activity {
         paint.setStrokeWidth(20);
 
         // Get Line Thickness Spinner
-        Spinner lineThickness = findViewById(R.id.line_thickness_spinner);
+        final Spinner lineThickness = (Spinner)findViewById(R.id.line_thickness_spinner);
 
         // List of items in the lineThickness
         String[] thickness = {"20", "22", "24", "26", "28", "30"};
@@ -54,12 +54,29 @@ public class Task1 extends Activity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,thickness);
         lineThickness.setAdapter(arrayAdapter);
 
+        lineThickness.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                length_thickness = lineThickness.getSelectedItem().toString();
+                paint.setStrokeWidth(Integer.parseInt(length_thickness));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+//        length_thickness = lineThickness.getSelectedItem().toString();
+//
+//        paint.setStrokeWidth(Integer.parseInt(length_thickness));
+
+
 //        lineThickness.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 //                String thickness = String.valueOf(adapterView.getItemAtPosition(i));
 //                length_thickness = Integer.parseInt(thickness);
-//
 //                paint.setStrokeWidth(length_thickness);
 //            }
 //        });
@@ -118,6 +135,7 @@ public class Task1 extends Activity {
         //draw the green rectangle on the image view
         //reusableImageView.setImageResource(R.drawable.green_rect);
     }// end of onCreate
+
 
     public void clearCanvas(View v)
     {
