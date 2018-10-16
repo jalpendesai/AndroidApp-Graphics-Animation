@@ -6,11 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".Task3">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TASK 3"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="130dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/moon"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="67dp"
+            tools:layout_editor_absoluteY="130dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgView_Earth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="550dp"
+            android:minWidth="380dp"
+             />
+    </LinearLayout>
+
 </RelativeLayout>
