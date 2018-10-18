@@ -35,7 +35,7 @@
         android:layout_alignBottom="@+id/lbl_line_thickness"
         android:layout_alignParentStart="true"
         android:layout_marginStart="130dp"
-        android:text="Line Color" />
+        android:text="@string/line_color" />
 
     <RadioGroup
         android:id="@+id/rbtnGroup"
@@ -97,7 +97,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="31dp"
         app:srcCompat="@drawable/key_arrow_left"
-        android:onClick="LeftButton"/>
+        />
 
     <ImageButton
         android:id="@+id/btn_RIGHT"
@@ -108,7 +108,7 @@
         android:layout_marginEnd="-34dp"
         android:layout_marginBottom="32dp"
         app:srcCompat="@drawable/key_arrow_right"
-        android:onClick="RightButton"
+
         />
 
     <ImageButton
@@ -120,7 +120,7 @@
         android:layout_marginTop="27dp"
         android:layout_marginEnd="81dp"
         app:srcCompat="@drawable/key_arrow_down"
-        android:onClick="DownButton"/>
+        />
 
     <Button
         android:id="@+id/btn_Clear"
@@ -147,5 +147,43 @@
             android:layout_margin="20px">
         </ImageView>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="156dp"
+        android:text="x = " />
+
+    <EditText
+        android:id="@+id/txtX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/x"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_toStartOf="@+id/lbl_ArrowKeys"
+        android:text="022" />
+
+    <TextView
+        android:id="@+id/y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/x"
+        android:layout_toEndOf="@+id/rbtnGroup"
+        android:text="y = " />
+
+    <EditText
+        android:id="@+id/txtY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_ArrowKeys"
+        android:layout_alignBottom="@+id/x"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="-1dp"
+        android:text="025" />
 
 </RelativeLayout>

@@ -4,39 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Task3">
+    tools:context=".Task3"
+    android:background="@color/universe">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:id="@+id/tweenStart"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="90dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:id="@+id/tweenStop"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/tweenStart"
+        />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/moon"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="67dp"
-            tools:layout_editor_absoluteY="130dp" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/earth"
+        android:layout_width="86dp"
+        android:layout_height="111dp"
+        android:layout_below="@id/moon"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/earth" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ImageView
+        android:id="@+id/moon"
+        android:layout_width="108dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/tweenStart"
         android:layout_centerInParent="true"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imgView_Earth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="550dp"
-            android:minWidth="380dp"
-             />
-    </LinearLayout>
+        app:srcCompat="@drawable/moon" />
 
 </RelativeLayout>

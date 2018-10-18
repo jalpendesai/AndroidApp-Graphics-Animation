@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -28,6 +29,8 @@ public class Task1 extends Activity {
     int starty = 10;
     int endx=10;
     int endy=10;
+
+    EditText xEditView,yEditView;
     //
     Paint paint;
     Bitmap bitmap;
@@ -44,6 +47,15 @@ public class Task1 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task1);
+
+
+        xEditView = findViewById(R.id.txtX);
+        xEditView.setText(String.valueOf(0));
+        xEditView.setFocusable(false);
+
+        yEditView = findViewById(R.id.txtY);
+        yEditView.setText(String.valueOf(0));
+        yEditView.setFocusable(false);
 
         paint = new Paint();
         paint.setColor(Color.RED);
@@ -135,6 +147,7 @@ public class Task1 extends Activity {
                 endy=endy+5;
                 drawLine(canvas);
                 reusableImageView.invalidate();
+                yEditView.setText(String.valueOf(endy));
             }
         });
 
@@ -146,6 +159,7 @@ public class Task1 extends Activity {
                 endx=endx+5;
                 drawLine(canvas);
                 reusableImageView.invalidate();
+                xEditView.setText(String.valueOf(endx));
             }
         });
 
@@ -157,6 +171,7 @@ public class Task1 extends Activity {
                 endy=endy-5;
                 drawLine(canvas);
                 reusableImageView.invalidate();
+                yEditView.setText(String.valueOf(endy));
             }
         });
 
@@ -168,6 +183,7 @@ public class Task1 extends Activity {
                 endx=endx-5;
                 drawLine(canvas);
                 reusableImageView.invalidate();
+                xEditView.setText(String.valueOf(endx));
             }
         });
 

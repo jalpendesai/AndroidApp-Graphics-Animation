@@ -7,4 +7,5 @@
     <string name="task_line">Select a task to show solution</string>
     <string name="line_thickness">Line Thickness</string>
     <string name="moon">Moon Simulation</string>
+    <string name="line_color">Line Color</string>
 </resources>
